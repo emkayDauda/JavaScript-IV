@@ -105,3 +105,15 @@ const sherif = new ProjectManager({
 	gradClassName: 'UX2',
 	favInstructor: 'Ellen',
 })
+
+const James = new Person({
+	name: 'James',
+  location: 'UK',
+  age: 40,
+})
+
+const kiyani = new Person({
+	name: 'Kiyani',
+  location: 'Ivory Coast',
+  age: 21,
+})
