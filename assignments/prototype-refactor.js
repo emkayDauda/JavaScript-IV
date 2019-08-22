@@ -101,7 +101,7 @@ class Car {
 }
 
 var aCar = new Car('YC', 'BMW');
-/* 
+/*
 function Baby(name, age) {
     Person.call(this, name, age)
   }
@@ -112,7 +112,16 @@ function Baby(name, age) {
 
   var mine = new Baby('Mine', 2)
  */
+class Baby extends Person {
+    constructor(name, age) {
+        super(name, age);
+    }
+    play() { return `I can play, even though I am ${this.age} years old...`; }
+}
 
+
+
+  var mine = new Baby('Mine', 2)
 /* 
  function Student(name, age, id, gender){
   this.name = name;
