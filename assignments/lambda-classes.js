@@ -1,9 +1,9 @@
 // CODE here for your Lambda Classes
 class Person {
-  constructor(name, age, location) {
-    this.name = name;
-    this.age = age;
-    this.location = location;
+  constructor(object) {
+    this.name = object.name;
+    this.age = object.age;
+    this.location = object.location;
 	}
 	
 	speak() {
@@ -12,11 +12,11 @@ class Person {
 }
 
 class Instructor extends Person {
-	constructor(name, age, location, specialty, faveLanguage, catchPhrase) {
-		super(name, age, location);
-		this.specialty = specialty;
-		this.faveLanguage = faveLanguage;
-		this.catchPhrase = catchPhrase;
+	constructor(object) {
+		super(object);
+		this.specialty = object.specialty;
+		this.faveLanguage = object.faveLanguage;
+		this.catchPhrase = object.catchPhrase;
 	}
 
 	demo(subject){
@@ -30,15 +30,15 @@ class Instructor extends Person {
 
 
 class Student extends Person {
-	constructor(name, age, location, previousBackground, className, favSubjects){
-		super(name, age, location);
-		this.previousBackground = previousBackground;
-		this.className = className;
-		this.favSubjects = favSubjects;
+	constructor(object){
+		super(object);
+		this.previousBackground = object.previousBackground;
+		this.className = object.className;
+		this.favSubjects = object.favSubjects;
 	}
 
 	listsSubjects(){
-		this.favSubjects.array.forEach(element => console.log(element));
+		this.favSubjects.forEach(element => console.log(element));
 	}
 
 	PRAssignment(subject) {
@@ -51,10 +51,10 @@ class Student extends Person {
 }
 
 class ProjectManager extends Instructor {
-	constructor(name, age, location, specialty, faveLanguage, catchPhrase, gradClassName, favInstructor){
-		super(name, age, location, specialty, faveLanguage, catchPhrase)
-		this.gradClassName = gradClassName;
-		this.favInstructor = favInstructor;
+	constructor(object){
+		super(object)
+		this.gradClassName = object.gradClassName;
+		this.favInstructor = object.favInstructor;
 	}
 
 	standUp(channel) {
