@@ -49,3 +49,17 @@ class Student extends Person {
 		console.log(`${this.name} has begun sprint challenge on ${subject}`)
 	}
 }
+
+class ProjectManager extends Instructor {
+	constructor(name, age, location, specialty, faveLanguage, catchPhrase, gradClassName, favInstructor){
+		super(name, age, location, specialty, faveLanguage, catchPhrase)
+	}
+
+	standUp(channel) {
+		console.log(`${this.name} announces to ${channel}, @channel standy times!​​​​​`)
+	}
+
+	debugsCode(student, subject) {
+		console.log(`${this.name} debugs ${student.name}'s code on ${subject}`)
+	}
+}
