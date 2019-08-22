@@ -222,7 +222,7 @@ class GameObject {
 }
   
   
-class CharacterStats {
+class CharacterStats extends GameObject {
     constructor(test) {
         super(test)
         this.healthPoints = test.healthPoints;
@@ -232,7 +232,7 @@ class CharacterStats {
   
   CharacterStats.prototype = Object.create(GameObject.prototype);
   
-class Humanoid {
+class Humanoid extends CharacterStats {
     constructor(test) {
         super(test)
         this.team = test.team;
@@ -241,7 +241,6 @@ class Humanoid {
     }
     greet() { return `${this.name} offers a greeting in ${this.language}.`; }
 }
-  
 /*
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
