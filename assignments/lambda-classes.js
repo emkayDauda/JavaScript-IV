@@ -142,3 +142,7 @@ bob.demo('UX')
 fred.grade(richany, 'JavaScript')
 
 bob.grade(dani, 'Repl.it')
+
+James.speak();
+
+kiyani.speak();
