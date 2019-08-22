@@ -117,3 +117,21 @@ const kiyani = new Person({
   location: 'Ivory Coast',
   age: 21,
 })
+
+const dani = new Student({
+	name: 'Danika',
+  location: 'UK',
+	age: 'har-har',
+	previousBackground: 'someBackground',
+	className: 'WEBEU3',
+	favSubjects: ['JavaScript', 'HTML', 'CSS', 'LESS']
+})
+
+const richany = new Student({
+	name: 'Richany',
+  location: 'SomePlace',
+	age: 'someAge',
+	previousBackground: 'someBackground',
+	className: 'WEBEU3',
+	favSubjects: ['LESS', 'Repl.it', 'LESS', 'CSS', 'codeWAAAARS!!!!']
+})
