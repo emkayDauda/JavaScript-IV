@@ -28,7 +28,21 @@ Prototype Refactor
 
   console.log(emkay)
 */
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        this.stomach = [];
+    }
 
+    eatEdible(stuff) {
+        this.stomach.push(stuff);
+    }
+
+    poop() {
+        this.stomach = [];
+    }
+}
 /* 
 function Car(model, make){
     this.model = model;
