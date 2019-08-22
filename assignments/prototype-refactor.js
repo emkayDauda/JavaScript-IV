@@ -185,7 +185,6 @@ class Student {
   var Usman = new Student('Usman', 24, '131869', 'M');
 
 // =====STRETCH CHALLENGE=======
-
 /*
 function GameObject(test){
   this.createdAt = test.createdAt;
@@ -213,7 +212,36 @@ function Humanoid(test) {
 Humanoid.prototype = Object.create(CharacterStats.prototype);
 Humanoid.prototype.greet = function () { return `${this.name} offers a greeting in ${this.language}.`}
  */
-
+class GameObject {
+    constructor(test) {
+        this.createdAt = test.createdAt;
+        this.name = test.name;
+        this.dimensions = test.dimensions;
+    }
+    destroy() { return `${this.name} was removed from the game`; }
+}
+  
+  
+class CharacterStats {
+    constructor(test) {
+        super(test)
+        this.healthPoints = test.healthPoints;
+    }
+    takeDamage() { return `${this.name} took damage.`; }
+}
+  
+  CharacterStats.prototype = Object.create(GameObject.prototype);
+  
+class Humanoid {
+    constructor(test) {
+        super(test)
+        this.team = test.team;
+        this.weapons = test.weapons;
+        this.language = test.language;
+    }
+    greet() { return `${this.name} offers a greeting in ${this.language}.`; }
+}
+  
 /*
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
