@@ -187,6 +187,31 @@ class Student {
 // =====STRETCH CHALLENGE=======
 
 /*
+function GameObject(test){
+  this.createdAt = test.createdAt;
+  this.name = test.name;
+  this.dimensions = test.dimensions;
+}
+
+GameObject.prototype.destroy = function () { return `${this.name} was removed from the game` }
+
+function CharacterStats(test){
+  GameObject.call(this, test);
+  this.healthPoints = test.healthPoints;
+}
+
+CharacterStats.prototype = Object.create(GameObject.prototype);
+CharacterStats.prototype.takeDamage = function () { return `${this.name} took damage.`}
+
+function Humanoid(test) {
+  CharacterStats.call(this, test);
+  this.team = test.team;
+  this.weapons = test.weapons;
+  this.language = test.language;
+}
+
+Humanoid.prototype = Object.create(CharacterStats.prototype);
+Humanoid.prototype.greet = function () { return `${this.name} offers a greeting in ${this.language}.`}
  */
 
 /*
