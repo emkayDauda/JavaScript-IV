@@ -28,7 +28,7 @@ Prototype Refactor
 
   console.log(emkay)
 */
-class Person {
+class Persons {
   constructor(name, age) {
     this.name = name;
     this.age = age;
@@ -44,7 +44,7 @@ class Person {
   }
 }
 
-const emkay = new Person("Maaruf", 23);
+const emkay = new Persons("Maaruf", 23);
 
 console.log(`${emkay.name} is currently ${emkay.age} yo`);
 emkay.eatEdible("Pizza");
@@ -112,7 +112,7 @@ function Baby(name, age) {
 
   var mine = new Baby('Mine', 2)
  */
-class Baby extends Person {
+class Baby extends Persons {
     constructor(name, age) {
         super(name, age);
     }
@@ -152,7 +152,7 @@ Student.prototype.turnANewLeaf = function () {
 }
 
 var Usman = new Student('Usman', 24, '131869', 'M'); */
-class Student {
+class Students {
     constructor(name, age, id, gender) {
         this.name = name;
         this.age = age;
@@ -182,7 +182,7 @@ class Student {
   
   
   
-  var Usman = new Student('Usman', 24, '131869', 'M');
+  var Usman = new Students('Usman', 24, '131869', 'M');
 
 // =====STRETCH CHALLENGE=======
 /*
