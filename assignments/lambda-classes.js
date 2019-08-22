@@ -53,6 +53,8 @@ class Student extends Person {
 class ProjectManager extends Instructor {
 	constructor(name, age, location, specialty, faveLanguage, catchPhrase, gradClassName, favInstructor){
 		super(name, age, location, specialty, faveLanguage, catchPhrase)
+		this.gradClassName = gradClassName;
+		this.favInstructor = favInstructor;
 	}
 
 	standUp(channel) {
@@ -81,3 +83,25 @@ const bob = new Instructor({
   specialty: 'Mobile',
   catchPhrase: `I see you see me`
 });
+
+const mk = new ProjectManager({
+	name: 'Emkay',
+  location: 'Nigeria',
+  age: 23,
+  favLanguage: 'Kotlin',
+  specialty: 'Mobile',
+	catchPhrase: `Say, what?`,
+	gradClassName: 'WEBEU2',
+	favInstructor: 'Gabe',
+})
+
+const sherif = new ProjectManager({
+	name: 'Sherif',
+  location: 'Nigeria',
+  age: 23,
+  favLanguage: 'TypeScript',
+  specialty: 'Front-End',
+	catchPhrase: `TF, bro?`,
+	gradClassName: 'UX2',
+	favInstructor: 'Ellen',
+})
