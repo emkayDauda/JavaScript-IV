@@ -35,6 +35,7 @@ class Student extends Person {
 		this.previousBackground = object.previousBackground;
 		this.className = object.className;
 		this.favSubjects = object.favSubjects;
+		this.grade =  Math.floor(Math.random() * (100 - 0)) + 0; 
 	}
 
 	listsSubjects(){
