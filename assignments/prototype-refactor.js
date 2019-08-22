@@ -122,7 +122,7 @@ class Baby extends Person {
 
 
   var mine = new Baby('Mine', 2)
-/* 
+/*
  function Student(name, age, id, gender){
   this.name = name;
   this.age = age;
@@ -152,6 +152,37 @@ Student.prototype.turnANewLeaf = function () {
 }
 
 var Usman = new Student('Usman', 24, '131869', 'M'); */
+class Student {
+    constructor(name, age, id, gender) {
+        this.name = name;
+        this.age = age;
+        this.id = id;
+        this.gender = gender;
+        this.isAcing = true;
+        this.future = 'still bright';
+        this.classesSkipped = 0;
+    }
+    skipClass(number) {
+        this.classesSkipped += Number(number);
+        if (this.classesSkipped >= 15) {
+            this.isAcing = false;
+            this.future = 'really dim right now, SMH';
+        }
+        else if (this.classesSkipped >= 11) {
+            this.isAcing = false;
+            this.future = 'currently dim';
+        }
+        return `You have skipped ${this.classesSkipped} classes and your future is ${this.future}`;
+    }
+    turnANewLeaf() {
+        this.classesSkipped = 0;
+        return `Huh... Who knew ${this.name} could ever attend make up classes...`;
+    }
+}
+  
+  
+  
+  var Usman = new Student('Usman', 24, '131869', 'M');
 
 // =====STRETCH CHALLENGE=======
 
