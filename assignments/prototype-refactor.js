@@ -218,7 +218,7 @@ class GameObject {
         this.name = test.name;
         this.dimensions = test.dimensions;
     }
-    destroy() { return `${this.name} was removed from the game`; }
+    destroy() { return console.log(`${this.name} was removed from the game`); }
 }
   
   
@@ -227,7 +227,7 @@ class CharacterStats extends GameObject {
         super(test)
         this.healthPoints = test.healthPoints;
     }
-    takeDamage() { return `${this.name} took damage.`; }
+    takeDamage() { return console.log(`${this.name} took damage. Remaining health is ${this.healthPoints}`); }
 }
   
   CharacterStats.prototype = Object.create(GameObject.prototype);
@@ -241,6 +241,34 @@ class Humanoid extends CharacterStats {
     }
     greet() { return `${this.name} offers a greeting in ${this.language}.`; }
 }
+
+class Villain extends Humanoid {
+  barbaricAttack(humanoid, atkPoints){
+    if(this.healthPoints > 0){
+      humanoid.healthPoints -= Number(atkPoints);
+    humanoid.takeDamage();
+
+    if(humanoid.healthPoints <= 0){
+      humanoid.destroy();
+    }
+    }
+  }
+}
+
+class Hero extends Humanoid {
+  righteousAttack(humanoid, atkPoints){
+    if(this.healthPoints > 0){
+      humanoid.healthPoints -= Number(atkPoints);
+    humanoid.takeDamage();
+
+
+    if(humanoid.healthPoints <= 0){
+      humanoid.destroy();
+    }
+    }
+  }
+}
+
 const mage = new Humanoid({
     createdAt: new Date(),
     dimensions: {
@@ -298,6 +326,51 @@ const mage = new Humanoid({
   console.log(archer.greet()); // Lilith offers a greeting in Elvish.
   console.log(mage.takeDamage()); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
+
+  const hero = new Hero({
+    createdAt: new Date(),
+    dimensions: {
+      length: 2,
+      width: 2,
+      height: 2,
+    },
+    healthPoints: 15,
+    name: 'Merlin',
+    team: 'The Round Table',
+    weapons: [
+      'Giant Sword',
+      'Shield',
+    ],
+    language: 'Common Tongue',
+  })
+
+  const villain = new Villain({
+    createdAt: new Date(),
+    dimensions: {
+      length: 2,
+      width: 2,
+      height: 2,
+    },
+    healthPoints: 25,
+    name: 'Dracula',
+    team: 'The Round Table',
+    weapons: [
+      'Giant Sword',
+      'Shield',
+    ],
+    language: 'Common Tongue',
+  })
+
+  console.log("\n*** FIGHT! ***")
+  console.log("Hero starting health points: ", hero.healthPoints); // 10 starting points
+  console.log("Villain starting health points: ", villain.healthPoints); // 15 starting points
+
+  hero.righteousAttack(villain, 3); // villain takes 3 damage, has 12 health left
+  hero.righteousAttack(villain, 5); // villain takes 3 damage, has 9 health left
+  villain.barbaricAttack(hero, 6); // hero takes 5 damage, has 5 health left
+  hero.righteousAttack(villain, 4); // villain takes 3 damage, has 6 health left
+  hero.righteousAttack(villain, 15); // villain takes  3 damage, has 3 health left
+  villain.barbaricAttack(hero, 5); // hero takes 5 damage, has 0 health left, and is thus destroyed
 /*
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
