@@ -43,6 +43,17 @@ class Person {
         this.stomach = [];
     }
 }
+
+const emkay = new Person('Maaruf', 23);
+
+console.log(`${emkay.name} is currently ${emkay.age} yo`)
+emkay.eatEdible('Pizza')
+
+console.log(emkay)
+
+emkay.poop()
+
+console.log(emkay)
 /* 
 function Car(model, make){
     this.model = model;
