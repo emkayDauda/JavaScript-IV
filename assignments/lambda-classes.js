@@ -135,3 +135,10 @@ const richany = new Student({
 	className: 'WEBEU3',
 	favSubjects: ['LESS', 'Repl.it', 'LESS', 'CSS', 'codeWAAAARS!!!!']
 })
+
+fred.demo('JavaScript')
+bob.demo('UX')
+
+fred.grade(richany, 'JavaScript')
+
+bob.grade(dani, 'Repl.it')
