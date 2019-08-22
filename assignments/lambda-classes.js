@@ -154,3 +154,11 @@ sherif.standUp('WebEU3');
 mk.debugsCode(richany, 'JavaScript')
 
 sherif.debugsCode(dani, 'Kotlin')
+
+richany.listsSubjects();
+richany.PRAssignment('Java')
+richany.sprintChallenge('Android')
+
+dani.listsSubjects();
+dani.PRAssignment('Kotlin')
+dani.sprintChallenge('Figma')
