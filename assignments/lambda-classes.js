@@ -146,3 +146,11 @@ bob.grade(dani, 'Repl.it')
 James.speak();
 
 kiyani.speak();
+
+mk.standUp('WebEU3_Isaac');
+
+sherif.standUp('WebEU3');
+
+mk.debugsCode(richany, 'JavaScript')
+
+sherif.debugsCode(dani, 'Kotlin')
