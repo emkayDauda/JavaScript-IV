@@ -29,31 +29,31 @@ Prototype Refactor
   console.log(emkay)
 */
 class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-        this.stomach = [];
-    }
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+  }
 
-    eatEdible(stuff) {
-        this.stomach.push(stuff);
-    }
+  eatEdible(stuff) {
+    this.stomach.push(stuff);
+  }
 
-    poop() {
-        this.stomach = [];
-    }
+  poop() {
+    this.stomach = [];
+  }
 }
 
-const emkay = new Person('Maaruf', 23);
+const emkay = new Person("Maaruf", 23);
 
-console.log(`${emkay.name} is currently ${emkay.age} yo`)
-emkay.eatEdible('Pizza')
+console.log(`${emkay.name} is currently ${emkay.age} yo`);
+emkay.eatEdible("Pizza");
 
-console.log(emkay)
+console.log(emkay);
 
-emkay.poop()
+emkay.poop();
 
-console.log(emkay)
+console.log(emkay);
 /* 
 function Car(model, make){
     this.model = model;
@@ -78,6 +78,29 @@ function Car(model, make){
   var aCar = new Car('YC', 'BMW');
 */
 
+class Car {
+  constructor(model, make) {
+    this.model = model;
+    this.make = make;
+    this.odometer = 0;
+    this.isCrashed = false;
+  }
+
+  drive(distance) {
+    if(this.isCrashed)
+      return `I crashed at ${this.odometer} miles!`
+    this.odometer += Number(distance)
+    return `Vroom vroom, we at ${this.odometer} miles now, baby!`;
+  }
+
+  crash() {
+    this.isCrashed = true;
+  }
+
+  repair() { this.isCrashed = false; }
+}
+
+var aCar = new Car('YC', 'BMW');
 /* 
 function Baby(name, age) {
     Person.call(this, name, age)
@@ -90,8 +113,7 @@ function Baby(name, age) {
   var mine = new Baby('Mine', 2)
  */
 
-
- /* 
+/* 
  function Student(name, age, id, gender){
   this.name = name;
   this.age = age;
@@ -122,11 +144,9 @@ Student.prototype.turnANewLeaf = function () {
 
 var Usman = new Student('Usman', 24, '131869', 'M'); */
 
-
-
 // =====STRETCH CHALLENGE=======
 
-/* 
+/*
  */
 
 /*
